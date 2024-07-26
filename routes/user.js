@@ -10,6 +10,14 @@ route.get('/signup',(req,res)=>{
     return res.render('signup');
 });
 
+route.post('/signin',async(req,res)=>{
+    const {email , password} = req.body ;
+    const user = await users.matchpassword(email,password);
+
+    console.log('user',user);
+    return res.redirect("/");
+});
+
 route.post('/signup',async(req,res)=>{
     const {fullName , email , password} =req.body ;
     await users.create({
