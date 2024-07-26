@@ -7,7 +7,7 @@ const userschema = new Schema({
 
     email :{ type : String  , require :true , unique :true},
 
-    salt: {type : String , require :true},
+    salt: {type : String },
 
     password : { type : String , require :true },
     

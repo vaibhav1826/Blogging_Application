@@ -10,7 +10,7 @@ route.get('/signup',(req,res)=>{
     return res.render('signup');
 });
 
-route.post('/signin',async(req,res)=>{
+route.post('/signup',async(req,res)=>{
     const {fullName , email , password} =req.body ;
     await users.create({
         fullName, email ,password
