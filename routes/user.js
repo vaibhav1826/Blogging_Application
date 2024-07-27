@@ -12,10 +12,16 @@ route.get('/signup',(req,res)=>{
 
 route.post('/signin',async(req,res)=>{
     const {email , password} = req.body ;
-    const user = await users.matchpassword(email,password);
+    try {
+        const token = await users.matchpasswordandgeneratetoken(email,password);
+    console.log("token",token);
+    return res.cookie("token",token).redirect("/");
 
-    console.log('user',user);
-    return res.redirect("/");
+    } catch (error) {
+        return res.render("signin",{
+            error: "Incorrect email and  password" ,
+        });
+    }
 });
 
 route.post('/signup',async(req,res)=>{
