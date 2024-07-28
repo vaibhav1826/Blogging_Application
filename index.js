@@ -3,6 +3,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cookieparser = require('cookie-parser');
 
+const { checkforauthenticationcookie } = require('./middleware/authenthication.js'); // importing middleware
+
 const app = express(); 
 const userRoute = require('./routes/user.js');
 const PORT = 5000;

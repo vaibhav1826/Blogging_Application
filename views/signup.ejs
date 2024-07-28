@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+  <%- include('./partials/head.ejs') %>  <!-- This line includes the head.ejs file in the signup.ejs file -->
     <title>Signup</title>
 </head>
 <body>
-
-
+ <%- include('./partials/nav.ejs') %>   <!-- This line includes the nav.ejs file in the signup.ejs file -->
 <% if(locals.error) { %>
   <div class="container mt-4">
   <div class = "alert alert-danger" role ="alert">
