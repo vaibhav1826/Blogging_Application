@@ -7,6 +7,7 @@ const { checkforauthenticationcookie } = require('./middleware/authenthication.j
 
 const app = express(); 
 const userRoute = require('./routes/user.js');
+const blogRoute = require('./routes/blog.js');
 const PORT = 5000;
 
 mongoose
@@ -28,7 +29,7 @@ app.get('/',(req,res)=>{
 });
 
 app.use('/user',userRoute);
-
+app.use('/blog',blogRoute);
 
 // server on localhost:5000 
 app.listen(PORT,()=>{

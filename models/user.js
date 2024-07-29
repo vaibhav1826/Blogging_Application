@@ -54,6 +54,6 @@ const userprovidehash =createHmac('sha256',salt)
 
 });
 
-const User = model('user',userschema);
+const User = model("user",userschema);
 
 module.exports = User;

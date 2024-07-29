@@ -10,6 +10,9 @@ route.get('/signup',(req,res)=>{
     return res.render('signup');
 });
 
+route.get('/logout',(req,res)=>{
+    res.clearCookie("token").redirect("/");
+})
 route.post('/signin',async(req,res)=>{
     const {email , password} = req.body ;
     try {
