@@ -22,8 +22,8 @@ app.use(cookieparser());
 app.use(checkforauthenticationcookie("token"));
 
 
-app.get('/',(req,res)=>{
-    res.render('home',{
+app.get('/',async(req,res)=>{
+    return res.render('home',{
         user: req.user,
     });
 });

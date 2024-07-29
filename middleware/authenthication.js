@@ -1,3 +1,5 @@
+const { validatetoken } = require('../services/authentication.js');
+
 function checkforauthenticationcookie(cookiename){
     return(req ,res ,next)=>{
         const tokencookievalue = req.cookies[cookiename];
@@ -6,7 +8,7 @@ function checkforauthenticationcookie(cookiename){
         }
         
     try {
-        const userpayload =validatetoken(tokencookievalue);
+        const userpayload = validatetoken(tokencookievalue);
         req.user =userpayload;
     } catch (error) {}
      return next();
