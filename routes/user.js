@@ -14,7 +14,6 @@ route.post('/signin',async(req,res)=>{
     const {email , password} = req.body ;
     try {
         const token = await users.matchpasswordandgeneratetoken(email,password);
-    console.log("token",token);
     return res.cookie("token",token).redirect("/");
 
     } catch (error) {
@@ -24,11 +23,13 @@ route.post('/signin',async(req,res)=>{
     }
 });
 
+
 route.post('/signup',async(req,res)=>{
-    const {fullName , email , password} =req.body ;
+    const {fullName, email , password} = req.body ;
     await users.create({
         fullName, email ,password
     });
     return res.redirect("/");
 });
+
 module.exports = route;
