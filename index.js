@@ -2,6 +2,7 @@ const path =require('path');
 const express = require('express');
 const mongoose = require('mongoose');
 const cookieparser = require('cookie-parser');
+const Blog = require('./models/blog.js');
 
 const { checkforauthenticationcookie } = require('./middleware/authenthication.js'); // importing middleware
 
@@ -20,11 +21,13 @@ app.set('views',path.resolve('./views'));
 app.use(express.urlencoded({ extended :false }));
 app.use(cookieparser());
 app.use(checkforauthenticationcookie("token"));
-
+app.use(express.static(path.resolve("./public")));
 
 app.get('/',async(req,res)=>{
-    return res.render('home',{
-        user: req.user,
+    const allBlogs = await Blog.find({});
+    res.render("home", {
+      user: req.user,
+      blogs: allBlogs,
     });
 });
 
