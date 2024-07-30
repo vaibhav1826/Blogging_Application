@@ -38,7 +38,7 @@ app.use(checkforauthenticationcookie("token"));
 app.use(express.static(path.resolve("./public")));
 
 // redirecting it to home page 
-app.get('https://vaibhav1826.github.io/Blogging_Application/',async(req,res)=>{
+app.get('/',async(req,res)=>{
     const allBlogs = await Blog.find({});
     res.render("home", {
       user: req.user,
@@ -47,8 +47,8 @@ app.get('https://vaibhav1826.github.io/Blogging_Application/',async(req,res)=>{
 });
 
 
-app.use('https://vaibhav1826.github.io/Blogging_Application/user',userRoute);
-app.use('https://vaibhav1826.github.io/Blogging_Application/blog',blogRoute);
+app.use('/user',userRoute);
+app.use('/blog',blogRoute);
 
 // server on localhost:5000  
 app.listen(PORT,()=>{
