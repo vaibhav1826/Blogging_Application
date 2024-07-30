@@ -1,7 +1,7 @@
 const {Router} = require('express');
 const multer =require('multer');
 const Blog = require('../models/blog');
-const Comment = require('../models/comment');
+const Comment = require("../models/comment");
 const path = require('path');
 const route = Router();
 
