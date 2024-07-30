@@ -50,7 +50,7 @@ app.get('/',async(req,res)=>{
 app.use('/user',userRoute);
 app.use('/blog',blogRoute);
 
-// server on localhost:5000 
+// server on localhost:5000  
 app.listen(PORT,()=>{
 console.log(`server starting on port : ${PORT}`);
 });
