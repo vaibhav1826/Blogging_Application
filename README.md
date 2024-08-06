@@ -1,7 +1,7 @@
 # [Blogging Application]
 A blogging application with a clean and minimal UI
 ## Features
-- **Clean and Minimal UI:** The application boasts a sleek design with a dark mode for comfortable reading.
+- **Clean and Minimal UI:** The application boasts a sleek design .
 - **HTML in Blogs:** Users can embed HTML code within their blogs using  blocks.
 ## Technologies Used
 
